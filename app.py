@@ -1,53 +1,90 @@
 import streamlit as st
 
 # Configuração da página
-st.set_page_config(page_title="AD Construções - Diagnóstico", layout="wide")
+st.set_page_config(page_title="AD Construções & PatologiaBR", layout="wide", page_icon="🏗️")
+
+# --- ESTILO VISUAL ---
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stButton>button {
+        background-color: #25D366;
+        color: white;
+        border-radius: 10px;
+        width: 100%;
+        font-weight: bold;
+        border: none;
+        padding: 12px;
+    }
+    .stButton>button:hover { background-color: #128C7E; color: white; }
+    </style>
+    """, unsafe_allow_html=True)
 
 # --- BARRA LATERAL ---
 with st.sidebar:
     st.title("AD Construções")
-    st.write("📞 (13) 99172-8599")
-    st.write("✉️ contatoadconstru@gmail.com")
+    st.subheader("Ademir Aparecido David")
+    st.write("🏗️ **Mestre de Obras Sênior**")
+    st.write("📐 **Técnico em Edificações**")
+    st.write("👥 **Especialista em Gerir Pessoas**")
+    
     st.markdown("---")
-    st.info("Utilize o formulário ao lado para enviar detalhes da sua obra para análise técnica.")
+    st.header("📍 Contato")
+    st.write("✉️ contatoadconstru@gmail.com")
+    st.write("📞 (13) 99172-8590")
+    
+    # Link do WhatsApp principal
+    url_whatsapp = "https://wa.me/5513991728590"
+    st.link_button("Falar no WhatsApp", url_whatsapp)
+    
+    st.markdown("---")
+    st.caption("São Paulo - SP | 40+ anos de experiência")
 
-# --- CORPO PRINCIPAL ---
-st.title("🔍 Área de Diagnóstico Técnico")
-st.write("Preencha os dados abaixo para que o Mestre Ademir David possa analisar sua patologia.")
+# --- CONTEÚDO PRINCIPAL ---
+st.title("Gerenciamento de Obras e Assessoria Técnica")
+st.markdown("---")
 
-# --- FORMULÁRIO DE ENVIO ---
-with st.form("formulario_analise", clear_on_submit=True):
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        nome = st.text_input("Seu Nome ou Nome da Obra:")
-        contato = st.text_input("Seu WhatsApp/Telefone:")
-        
-    with col2:
-        categoria = st.selectbox("Tipo de problema:", 
-                                ["Infiltração", "Fissura/Racha", "Revestimento Soltando", "Umidade", "Outros"])
-    
-    descricao = st.text_area("Descreva o que está acontecendo:")
-    
-    foto = st.file_uploader("Suba aqui a foto da patologia (JPG/PNG):", type=["jpg", "png", "jpeg"])
-    
-    botao_enviar = st.form_submit_button("Enviar para Análise Técnica")
+# Seção de Serviços em Abas
+tab1, tab2 = st.tabs(["🏗️ Gestão de Obras", "🔍 PatologiaBR (Diagnósticos)"])
 
-if botao_enviar:
-    if nome and contato and foto:
-        st.success(f"✅ Recebido, {nome}!")
-        
-        # Exibição do resumo para o cliente
-        st.markdown("### Resumo do Envio")
-        st.write(f"**Contato:** {contato}")
-        st.write(f"**Problema:** {categoria}")
-        st.write(f"**Descrição:** {descricao}")
-        st.image(foto, caption="Foto enviada", width=400)
-        
-        st.warning("⚠️ IMPORTANTE: Como estamos em fase de teste, tire um 'Print' desta tela ou envie as informações acima para o WhatsApp (13) 99172-8599 para garantir o atendimento imediato.")
-    else:
-        st.error("❌ Por favor, preencha o nome, contato e envie a foto.")
+with tab1:
+    st.write("""
+    ### Experiência de Canteiro e Gestão Profissional
+    Atuamos em grandes projetos de infraestrutura e obras residenciais de alto padrão, 
+    focando na gestão eficiente de equipes e conformidade com as normas NBR.
+    """)
+
+with tab2:
+    st.write("""
+    ### Tecnologia Aplicada à Engenharia
+    Consultoria especializada em diagnóstico de patologias e manutenção predial 
+    conforme a **NBR 5674**.
+    """)
+
+# --- ÁREA DE ENVIO DE FOTOS (O SEU PEDIDO) ---
+st.markdown("---")
+st.header("📸 Enviar Foto para Análise")
+st.warning("⚠️ **Instrução:** Após selecionar a foto abaixo, ela aparecerá na tela. Em seguida, clique no botão verde para me enviar o aviso pelo WhatsApp.")
+
+# Campo de upload
+arquivo = st.file_uploader("Escolha a imagem da obra ou patologia", type=["jpg", "png", "jpeg"])
+
+if arquivo is not None:
+    st.image(arquivo, caption="Imagem carregada", use_container_width=True)
+    st.success("✅ Foto carregada no site!")
+    
+    # Mensagem personalizada para o WhatsApp
+    mensagem_zap = "Olá Ademir, acabei de carregar uma foto no seu site para análise técnica. Vou te enviar a imagem aqui agora."
+    link_mensagem = f"https://wa.me/5513991728590?text={mensagem_zap.replace(' ', '%20')}"
+    
+    st.markdown(f"""
+        <a href="{link_mensagem}" target="_blank">
+            <button style="width:100%; background-color:#25D366; color:white; border:none; padding:15px; border-radius:10px; font-weight:bold; cursor:pointer;">
+                🟢 CLIQUE AQUI PARA ME ENVIAR A FOTO PELO WHATSAPP
+            </button>
+        </a>
+    """, unsafe_allow_html=True)
 
 # Rodapé
 st.markdown("---")
-st.caption("© 2026 AD Construções - Sistema de Triagem de Patologias.")
+st.caption("© 2026 AD Construções - Tecnologia e Experiência.")
