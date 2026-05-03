@@ -37,7 +37,7 @@ with col_logo:
     if os.path.exists(path_imagem):
         st.image(path_imagem, use_container_width=True)
     else:
-        st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=150)
+        st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=True)
 
 with col_tit:
     st.markdown('<div class="header-inst">AD CONSTRUÇÕES & GERENCIAMENTO</div>', unsafe_allow_html=True)
