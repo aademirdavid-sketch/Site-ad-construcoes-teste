@@ -29,7 +29,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # 3. Cabeçalho Estrutural (Logo e Identificação)
-col_logo, col_tit = st.columns([1, 2])
+col_logo, col_tit = st.columns([1,])
 
 with col_logo:
     # Vinculação do ativo de imagem
