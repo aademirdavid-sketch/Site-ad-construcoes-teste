@@ -12,7 +12,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     .main { background-color: #ffffff; }
-    .titulo-principal { color: #1E3A8A; font-size: 42px; font-weight: bold; text-align: center; }
+    .titulo-principal { color: #1E3A8A; font-size: 42px; font-weight: bold; text-align: center; margin-bottom: 0px; }
     .subtitulo { color: #555; text-align: center; font-size: 20px; margin-bottom: 30px; }
     .cartao-servico {
         background-color: #f8f9fa;
@@ -28,15 +28,13 @@ st.markdown("""
 col_logo, col_tit = st.columns([1, 3])
 
 with col_logo:
-    # Nome do arquivo que você subiu por último
+    # Nome do arquivo de imagem que você subiu
     nome_logo = "IMG_20260210_110844~4.png"
     
     if os.path.exists(nome_logo):
-        # use_container_width=True faz a logo ocupar todo o espaço da coluna lateral
         st.image(nome_logo, use_container_width=True)
     else:
         st.warning("⚠️ Carregando logo...")
-        # Ícone temporário caso o arquivo não seja lido
         st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=120)
 
 with col_tit:
@@ -52,17 +50,17 @@ with col_info:
     st.markdown("### 🏗️ Autoridade no Canteiro de Obras")
     st.write(f"""
     Com mais de **40 anos de experiência**, Ademir Aparecido David traz a segurança da vivência prática 
-    aliada à precisão técnica. Especialista em grandes projetos de infraestrutura e residências de alto padrão, 
-    garantindo que cada detalhe respeite as normas **NBR**.
+    aliada à precisão técnica. Especialista em grandes projetos de infraestrutura, unidades industriais 
+    farmacêuticas e residências de alto padrão, garantindo que cada detalhe respeite as normas **NBR**.
     """)
     
     st.markdown("### 🛠️ Nossos Serviços")
     
     servicos = {
-        "Gerenciamento": "Implantação de projetos com rigoroso controle de cronograma, custos e qualidade.",
-        "Assessoria Técnica": "Suporte especializado para pequenos e médios empreiteiros e proprietários.",
-        "Laudos e NBR": "Consultoria em conformidade técnica e manutenção predial.",
-        "PatologiaBR": "Diagnóstico técnico de problemas estruturais e infiltrações."
+        "Gerenciamento de Obras": "Implantação de projetos com rigoroso controle de cronograma, custos e qualidade da mão de obra.",
+        "Assessoria Técnica": "Suporte especializado para pequenos e médios empreiteiros e proprietários em obras residenciais e comerciais.",
+        "Laudos e Normas": "Consultoria em manutenção predial e conformidade técnica baseada na NBR 5674 e outras normas vigentes.",
+        "PatologiaBR": "Diagnóstico técnico avançado para análise de problemas estruturais e infiltrações."
     }
     
     for titulo, desc in servicos.items():
@@ -74,12 +72,13 @@ with col_info:
 
 with col_contato:
     st.markdown("### 📍 Contato Direto")
-    st.info("📞 (13) 99172-8599")
+    # NÚMERO ATUALIZADO AQUI
+    st.info("📞 (13) 99172-8590")
     st.info("✉️ contatoadconstru@gmail.com")
     
-    if st.button("CHAMAR NO WHATSAPP"):
-        st.write("Redirecionando...")
+    # Botão de WhatsApp com o número correto: 55 + DDD + NUMERO
+    st.link_button("CHAMAR NO WHATSAPP", "https://wa.me/5513991728590")
 
 # 5. Rodapé
 st.markdown("---")
-st.caption(f"© {2026} AD Construções e Gerenciamento de Obras LTDA - Tambaú/SP para o Brasil.")
+st.caption("© 2026 AD Construções e Gerenciamento de Obras LTDA. Especialista em Gerir Pessoas e Projetos.")
