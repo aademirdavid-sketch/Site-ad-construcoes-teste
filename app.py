@@ -29,7 +29,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # 3. Cabeçalho Estrutural (Logo e Identificação)
-col_logo, col_tit = st.columns([1, 4])
+col_logo, col_tit = st.columns([1, 2])
 
 with col_logo:
     # Vinculação do ativo de imagem
@@ -40,8 +40,8 @@ with col_logo:
         st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=True)
 
 with col_tit:
-    st.markdown('<div class="header-inst">AD CONSTRUÇÕES & GERENCIAMENTO</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-inst">Consultoria Técnica e Implantação de Projetos de Engenharia</div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-inst">AD CONSTRUÇÃO E GERENCIAMENTO DE OBRAS</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-inst">Consultoria Técnica e Implantação de Projetos</div>', unsafe_allow_html=True)
 
 st.write("---")
 
@@ -52,9 +52,9 @@ with col_left:
     st.markdown('<h3 class="section-title">Excelência Operacional e Rigor Técnico</h3>', unsafe_allow_html=True)
     st.write("""
     Com trajetória consolidada de mais de quatro décadas no setor da Construção Civil, a **AD Construções** oferece 
-    soluções integradas para o gerenciamento de ativos imobiliários, unidades industriais e infraestrutura urbana. 
-    Nossa atuação é pautada pelo estrito cumprimento das Normas Regulamentadoras (NBR) e pela otimização 
-    processual, garantindo a conformidade técnica e a viabilidade financeira dos empreendimentos sob nossa custódia.
+    soluções integradas para o gerenciamento de obras, unidades industriais e infraestrutura urbana. 
+    Nossa atuação é pautada pelo estrito cumprimento das Normas Regulamentadoras e pela otimização 
+    processual, garantindo a conformidade técnica e a viabilidade financeira dos empreendimentos.
     """)
 
     st.markdown("#### Especialidades e Frentes de Atuação")
@@ -63,7 +63,7 @@ with col_left:
     with c1:
         st.markdown("""
         <div class="card">
-            <span class="label-tecnico">ENGENHARIA DE CUSTOS</span>
+            <span class="label-tecnico">Orçamento</span>
             <p>Elaboração de orçamentos detalhados, controle de insumos e gestão de contratos de mão de obra (labor-only).</p>
         </div>
         """, unsafe_allow_html=True)
@@ -95,7 +95,7 @@ with col_right:
     
     with st.container():
         st.markdown("**Corpo Técnico Responsável:**")
-        st.write("Ademir Aparecido David")
+        st.write("Ademir David")
         st.caption("Técnico em Edificações | Mestre de Obras Sênior")
         
         st.write("---")
