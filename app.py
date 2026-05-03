@@ -3,7 +3,7 @@ import os
 
 # 1. Configuração de Diretrizes da Página
 st.set_page_config(
-    page_title="AD Construções - Gestão Técnica de Ativos e Obras",
+    page_title="AD Construções - Gestão Técnica de Obras",
     page_icon="🏗️",
     layout="wide"
 )
@@ -22,7 +22,7 @@ st.markdown("""
         border-radius: 4px;
         border: 1px solid #e2e8f0;
         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        height: 100%;
+        height: 400%;
     }
     .label-tecnico { color: #1e40af; font-weight: 600; font-size: 14px; }
     </style>
