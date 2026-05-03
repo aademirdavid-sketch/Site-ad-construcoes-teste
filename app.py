@@ -5,7 +5,7 @@ import os
 st.set_page_config(
     page_title="AD Construções - Gestão Técnica de Ativos e Obras",
     page_icon="🏗️",
-    layout="centered"  # Centraliza o conteúdo para melhor leitura em coluna única
+    layout="centered" 
 )
 
 # 2. Identidade Visual e Estilização Profissional
@@ -19,32 +19,28 @@ st.markdown("""
     .sub-inst { color: #475569; font-size: 16px; font-weight: 400; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
     .section-title { border-bottom: 2px solid #0a1931; color: #0a1931; padding-bottom: 10px; margin-top: 40px; font-weight: bold; text-align: center; }
     
-    /* Cartões de Serviço em Coluna Única */
+    /* Cartões de Serviço */
     .card {
         background-color: #fcfcfc;
         padding: 25px;
         border-radius: 8px;
         border: 1px solid #e2e8f0;
         margin-bottom: 20px;
-        transition: transform 0.2s;
     }
-    .card:hover { border-color: #1e40af; }
     .label-tecnico { color: #1e40af; font-weight: 700; font-size: 14px; text-transform: uppercase; display: block; margin-bottom: 10px; }
-    
-    /* Centralização da Logo */
-    .logo-container { display: flex; justify-content: center; margin-bottom: 10px; }
     </style>
     """, unsafe_allow_html=True)
 
-# 3. Cabeçalho Centralizado (Logo e Título)
-# Criamos colunas apenas para centralizar a logo no meio da tela
-col_space1, col_logo, col_space2 = st.columns([1, 2, 1])
+# 3. Cabeçalho Centralizado com Logo 50% Maior
+# Ajustamos as proporções de [1, 2, 1] para [0.5, 3, 0.5] para expandir a área da imagem
+col_space1, col_logo, col_space2 = st.columns([0.5, 3, 0.5])
 with col_logo:
     path_imagem = "IMG_20260210_110844~4.png"
     if os.path.exists(path_imagem):
+        # O use_container_width preenche a nova área maior da coluna
         st.image(path_imagem, use_container_width=True)
     else:
-        st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=150)
+        st.image("https://cdn-icons-png.flaticon.com/512/4333/4333644.png", width=250)
 
 st.markdown('<div class="header-inst">AD CONSTRUÇÕES & GERENCIAMENTO</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-inst">Consultoria Técnica e Implantação de Projetos de Engenharia</div>', unsafe_allow_html=True)
@@ -52,7 +48,7 @@ st.markdown('<div class="sub-inst">Consultoria Técnica e Implantação de Proje
 # 4. Corpo Institucional - Coluna Única
 st.markdown('<h3 class="section-title">Excelência Operacional e Rigor Técnico</h3>', unsafe_allow_html=True)
 
-st.write("") # Espaçamento
+st.write("") 
 st.write("""
 A **AD Construções** consolida mais de quatro décadas de expertise no setor da Construção Civil, oferecendo soluções de alta 
 performance para o gerenciamento de ativos imobiliários, unidades industriais e infraestrutura urbana. 
@@ -62,7 +58,6 @@ garantindo a integridade técnica, segurança e viabilidade econômica em todas 
 
 st.markdown("#### Portfólio de Especialidades")
 
-# Serviços listados um abaixo do outro (Layout Vertical)
 servicos = [
     {
         "label": "Engenharia de Custos e Contratos",
@@ -94,7 +89,7 @@ for s in servicos:
 st.markdown('<h3 class="section-title">Canais de Atendimento Corporativo</h3>', unsafe_allow_html=True)
 
 st.write("")
-col_c1, col_c2, col_c3 = st.columns([0.2, 1, 0.2]) # Centraliza o bloco de contato
+col_c1, col_c2, col_c3 = st.columns([0.1, 1, 0.1]) 
 with col_c2:
     st.markdown("""
     <div style="text-align: center; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
