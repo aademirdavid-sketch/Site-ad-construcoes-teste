@@ -34,7 +34,7 @@ col_logo, col_tit = st.columns([1, 4])
 
 with col_logo:
     # Tenta carregar a logo do GitHub. Se não existir, coloca um ícone temporário.
-    if os.path.exists("logo_ad.png"):
+    if os.path.exists("IMG_20260210_110844~4.png"):
         st.image("IMG_20260210_110844~4.png",width=180)
     else:
         st.info("Upload 'logo_ad.png' no GitHub")
