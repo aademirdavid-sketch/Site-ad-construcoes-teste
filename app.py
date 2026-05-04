@@ -3,7 +3,7 @@ import os
 
 # 1. Configuração de Diretrizes da Página
 st.set_page_config(
-    page_title="AD Construções - Gestão Técnica de Obras",
+    page_title="AD Construções e Gerenciamento de Obras",
     page_icon="🏗️",
     layout="centered" 
 )
