@@ -61,7 +61,8 @@ st.markdown("#### Portfólio de Especialidades")
 servicos = [
     {
         "label": "Assessoria de Custos e Contratos",
-        "desc": "Elaboração de orçamentos analíticos, gestão de suprimentos e controle rigoroso de contratos de mão de obra."
+        "desc": "Elaboração de orçamentos analíticos"
+        "Gestão de suprimentos e controle rigoroso de contratos de mão de obra."
     },
     {
         "label": "Gestão de Implantação e Canteiro",
@@ -93,7 +94,7 @@ col_c1, col_c2, col_c3 = st.columns([0.1, 1, 0.1])
 with col_c2:
     st.markdown("""
     <div style="text-align: center; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
-        <p><strong>Responsável Técnico:</strong> Ademir Aparecido David</p>
+        <p><strong>Responsável Técnico:</strong> Ademir David</p>
         <p style="font-size: 14px; color: #64748b;">Mestre de Obras Sênior | Técnico em Edificações</p>
         <p>📍 Unidade de Operação: São Paulo / SP</p>
         <p style="font-size: 18px; color: #0a1931; font-weight: bold;">📞 (13) 99172-8590</p>
